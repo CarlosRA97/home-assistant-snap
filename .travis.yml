@@ -1,12 +1,8 @@
-dist: xenial
+dist: trusty
 sudo: required
 language: python
 python:
  - '3.5'
-
-install:
- - sudo apt-get update -yq
- - sudo apt-get install -yq snapd
 
 script:
  - snapcraft
