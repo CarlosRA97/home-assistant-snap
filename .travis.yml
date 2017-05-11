@@ -6,7 +6,7 @@ python:
 
 install:
  - sudo apt-get update -yq
- - sudo apt-get install -yq snapd
+ - sudo apt-get install -yq snapd snapcraft
 
 script:
- - sudo snapcraft
+ - snapcraft
