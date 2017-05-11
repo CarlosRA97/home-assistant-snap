@@ -10,9 +10,9 @@ grade: devel
 confinement: devmode
 
 apps:
-  home-assistant:
-    command: hass --daemon
-    daemon: simple
+  hass:
+    command: hass --config $SNAP_DATA --daemon --skip-pip
+    daemon: forking
     restart-condition: always
     plugs: [network, network-bind]
 
@@ -20,7 +20,17 @@ parts:
   home-assistant:
     plugin: python
     source: https://github.com/home-assistant/home-assistant/archive/0.44.2.tar.gz
-
-  mosquitto:
-    plugin: cmake
-    source: http://mosquitto.org/files/source/mosquitto-1.4.11.tar.gz
+    python-packages: 
+        - aiohttp
+        - aiohttp_cors
+        - astral
+        - async_timeout==1.2.0
+        - distro
+        - fuzzywuzzy
+        - gtts_token
+        - mutagen
+        - netdisco==1.0.0rc3
+        - pytz==2017.2
+        - requests
+        - sqlalchemy
+        - xmltodict
