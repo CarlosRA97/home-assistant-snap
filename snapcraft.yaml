@@ -1,5 +1,5 @@
 name: home-assistant-escoand
-version: 0.47.1snap2
+version: 0.47.1snap3
 summary: Open-source home automation platform running on Python 3
 description: |
   Home Assistant is a home automation platform running on Python 3.
@@ -21,6 +21,8 @@ parts:
     plugin: python
     source: https://github.com/home-assistant/home-assistant.git
     source-tag: 0.47.1
+    stage-packages:
+      - libffi-dev
     requirements: requirements_all.txt
     # openzwave build is failing
     prepare: sed -i 's/^python_openzwave/#&/' ../src/requirements_all.txt
