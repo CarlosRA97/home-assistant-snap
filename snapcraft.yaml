@@ -32,5 +32,5 @@ parts:
     requirements: requirements_all.txt
     # openzwave build is failing
     prepare: |
+      find ../ -name '*.swp' -delete
       sed -i 's/^python_openzwave/#&/' ../src/requirements_all.txt
-      find -name '*.swp' -delete
