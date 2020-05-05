@@ -19,7 +19,7 @@ apps:
 
 parts:
   home-assistant:
-    plugin: python38
+    plugin: python
     source: https://github.com/home-assistant/core.git
     source-tag: "0.109.4"
     build-packages:
@@ -32,7 +32,7 @@ parts:
       - zlib1g-dev
     requirements: requirements_all.txt
     stage:
-      - -lib/python3.8/site-packages/tabulate-0.7.7.dist-info/.PKG-INFO.swp
+      - -lib/python3.5/site-packages/tabulate-0.7.7.dist-info/.PKG-INFO.swp
       - -man/
       - -share/
       - -usr/share/
